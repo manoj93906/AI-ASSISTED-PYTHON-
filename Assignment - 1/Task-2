@@ -1,0 +1,67 @@
+from math import isqrt
+from typing import Any
+
+def _prime(n: int) -> bool:
+    """Return True if n is a prime number, otherwise False.
+
+    Args:
+        n: integer to test.
+
+    Raises:
+        TypeError: if n is not an int.
+    """
+    if not isinstance(n, int):
+        raise TypeError("n must be an integer")
+
+    if n < 2:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+
+    limit = isqrt(n)
+    for d in range(3, limit + 1, 2):
+        if n % d == 0:
+            return False
+    return True
+
+
+def _run_from_args(args: list[str]) -> None:
+    for a in args:
+        try:
+            v = int(a)
+        except ValueError:
+            print(f"{a}: not an integer")
+            continue
+        print(f"{v}: {_prime(v)}")
+
+
+def _interactive_loop() -> None:
+    print("Enter integers to test for primality (empty line or 'q' to quit):")
+    while True:
+        s = input("> ").strip()
+        if s == "" or s.lower() == "q":
+            break
+        try:
+            v = int(s)
+        except ValueError:
+            print("Please enter a valid integer")
+            continue
+        print(f"{v}: {_prime(v)}")
+
+
+if __name__ == "__main__":
+    import sys
+
+    # If args provided, test them non-interactively:
+    if len(sys.argv) > 1:
+        _run_from_args(sys.argv[1:])
+    else:
+        # Demo quick checks:
+        demo_values = [-1, 0, 1, 2, 3, 4, 16, 17, 19, 97, 99991, 1000003]
+        print("Demo checks:")
+        for v in demo_values:
+            print(f"{v}: {_prime(v)}")
+        print("\nNow interactive mode:")
+        _interactive_loop()
