@@ -1,0 +1,62 @@
+def factorial_recursive(n: int) -> int:
+    """Calculate factorial using recursion.
+    
+    Args:
+        n: A non-negative integer
+    Returns:
+        The factorial of n
+    Raises:
+        ValueError: If n is negative
+        TypeError: If n is not an integer
+    """
+    if not isinstance(n, int):
+        raise TypeError("Input must be an integer")
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    if n <= 1:
+        return 1
+    return n * factorial_recursive(n - 1)
+
+def factorial_iterative(n: int) -> int:
+    """Calculate factorial using iteration.
+    
+    Args:
+        n: A non-negative integer
+    Returns:
+        The factorial of n
+    Raises:
+        ValueError: If n is negative
+        TypeError: If n is not an integer
+    """
+    if not isinstance(n, int):
+        raise TypeError("Input must be an integer")
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+if __name__ == "__main__":
+    # Test both implementations
+    test_numbers = [0, 1, 5, 10]
+    
+    print("Testing both factorial implementations:")
+    print("-" * 40)
+    
+    for num in test_numbers:
+        print(f"Number: {num}")
+        print(f"Recursive factorial: {factorial_recursive(num)}")
+        print(f"Iterative factorial: {factorial_iterative(num)}")
+        print("-" * 40)
+    
+    # Interactive testing
+    try:
+        user_input = int(input("Enter a number to calculate its factorial: "))
+        print(f"\nRecursive result: {factorial_recursive(user_input)}")
+        print(f"Iterative result: {factorial_iterative(user_input)}")
+    except ValueError as e:
+        print(f"Error: {e}")
+    except TypeError as e:
+        print(f"Error: {e}")
