@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Student Info Portal</title>
+		<!-- Link external stylesheet (styles moved to task2.css) -->
+		<link rel="stylesheet" href="task2.css">
+	</head>
+	<body>
+		<!-- Page wrapper / centered content -->
+		<header>
+			<div class="container" role="banner">
+				<!-- Top header: site title + responsive nav -->
+				<div class="header-row">
+					<div class="brand">
+						<img class="logo" src="data:image/png;base64,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" alt="logo" aria-hidden="true">
+						<div>
+							<div class="site-title">Student Info Portal</div>
+							<div class="site-sub">Access student profiles, courses and resources</div>
+						</div>
+					</div>
+
+					<!-- Responsive navigation (CSS-driven) -->
+					<input id="nav-toggle" type="checkbox" aria-hidden="true">
+					<label for="nav-toggle" class="nav-toggle-label" aria-hidden="false">Menu</label>
+					<nav aria-label="Main navigation">
+						<ul class="nav-list">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#profiles">Profiles</a></li>
+							<li><a href="#courses">Courses</a></li>
+							<li><a href="#resources">Resources</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+		<!-- Main content area -->
+		<main class="container" role="main">
+			<!-- Hero with quick actions -->
+			<section class="hero">
+				<div>
+					<h1>Welcome to the Student Info Portal</h1>
+					<p class="meta">Find student data, course enrollments, grades, and helpful resources in one place.</p>
+				</div>
+				<div class="actions" aria-hidden="false">
+					<a class="btn" href="#profiles">View Profiles</a>
+					<a class="btn secondary" href="#courses">Browse Courses</a>
+				</div>
+			</section>
+
+			<!-- Small login form (simple demo) -->
+			<section id="login" class="centered-section" aria-labelledby="login-heading">
+				<h2 id="login-heading">Staff / Student Login</h2>
+				<form id="loginForm" action="/login" method="post" novalidate>
+					<div class="form-row">
+						<label for="username">Username</label>
+						<input id="username" name="username" type="text" autocomplete="username" required>
+						<span class="error" id="username-error" role="alert" aria-live="polite"></span>
+					</div>
+
+					<div class="form-row">
+						<label for="password">Password</label>
+						<input id="password" name="password" type="password" autocomplete="current-password" required>
+						<span class="error" id="password-error" role="alert" aria-live="polite"></span>
+					</div>
+
+					<div class="form-actions">
+						<button class="btn" type="submit">Sign in</button>
+						<div id="form-message" class="form-message" aria-live="polite"></div>
+					</div>
+				</form>
+			</section>
+
+			<!-- Example sections — keep these as placeholders for a real application -->
+			<section id="profiles" class="centered-section">
+				<h2>Student Profiles</h2>
+				<p>Search and view student information, enrollment history, and academic records. (Placeholder content)</p>
+			</section>
+
+			<section id="courses" class="centered-section">
+				<h2>Courses & Enrollment</h2>
+				<p>Browse available courses, view schedules, and manage enrollments for students.</p>
+			</section>
+
+			<section id="resources" class="centered-section">
+				<h2>Resources</h2>
+				<p>Access forms, guidelines, and external references to support students and faculty.</p>
+			</section>
+		</main>
+		<!-- Footer containing copyright and quick links -->
+		<footer role="contentinfo" class="site-footer">
+			<div class="container">
+				<div class="footer-row">
+					<div>
+						<strong>Student Info Portal</strong>
+						<div class="footer-copy">© 2025 SR University — All rights reserved.</div>
+					</div>
+					<div class="footer-links">
+						<a href="#privacy">Privacy</a>
+						<a href="#terms">Terms</a>
+						<a href="#help">Help</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Developer note: This is a simple static homepage template. Replace placeholder content with dynamic integration as needed. -->
+
+		<!-- App scripts -->
+		<script src="task.js"></script>
+	</body>
+</html>
